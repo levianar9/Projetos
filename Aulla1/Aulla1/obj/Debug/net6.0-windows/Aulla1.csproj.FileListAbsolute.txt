@@ -1,0 +1,17 @@
+C:\GitHub\Projetos\Aulla1\Aulla1\bin\Debug\net6.0-windows\Aulla1.exe
+C:\GitHub\Projetos\Aulla1\Aulla1\bin\Debug\net6.0-windows\Aulla1.deps.json
+C:\GitHub\Projetos\Aulla1\Aulla1\bin\Debug\net6.0-windows\Aulla1.runtimeconfig.json
+C:\GitHub\Projetos\Aulla1\Aulla1\bin\Debug\net6.0-windows\Aulla1.dll
+C:\GitHub\Projetos\Aulla1\Aulla1\bin\Debug\net6.0-windows\Aulla1.pdb
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.csproj.AssemblyReference.cache
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.Form_Aula1.resources
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.csproj.GenerateResource.cache
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.AssemblyInfoInputs.cache
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.AssemblyInfo.cs
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.csproj.CoreCompileInputs.cache
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.dll
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\refint\Aulla1.dll
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.pdb
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\Aulla1.genruntimeconfig.cache
+C:\GitHub\Projetos\Aulla1\Aulla1\obj\Debug\net6.0-windows\ref\Aulla1.dll
