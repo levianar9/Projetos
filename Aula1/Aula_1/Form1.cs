@@ -12,6 +12,8 @@ namespace Aula_1
         OleDbDataAdapter DAcadastropessoa;
         DataSet DScadastropessoa;
         OleDbCommand comInsertPessoa;
+        OleDbCommand comUpdatePessoa;
+        OleDbCommand comDeletePessoa;
 
         public Form1()
         {
@@ -32,6 +34,23 @@ namespace Aula_1
             comInsertPessoa.Parameters.Add("telefone", OleDbType.VarChar, 11, "telefone");
             comInsertPessoa.Connection = new OleDbConnection(ConnStr);
             DAcadastropessoa.InsertCommand = comInsertPessoa;
+
+            // Editar Pessoa
+            string sqlUp = "update CADASTROPESSOA set codigo = ?, nome = ?, email = ? where telefone = ?";
+            comUpdatePessoa = new OleDbCommand(sqlUp);
+            comUpdatePessoa.Parameters.Add(":CODIGO", OleDbType.Numeric, 6, "CODIGO");
+            comUpdatePessoa.Parameters.Add(":NOME", OleDbType.VarChar, 100, "NOME");
+            comUpdatePessoa.Parameters.Add(":EMAIL", OleDbType.VarChar, 100, "EMAIL");
+            comUpdatePessoa.Parameters.Add(":TELEFONE", OleDbType.VarChar, 11, "TELEFONE");
+            comUpdatePessoa.Connection = new OleDbConnection(ConnStr);
+            DAcadastropessoa.UpdateCommand = comUpdatePessoa;
+
+            // Excluir Pessoa 
+            string sqlDel = "delete from CADASTROPESSOA where codigo = ?";
+            comDeletePessoa = new OleDbCommand(sqlDel);
+            comDeletePessoa.Parameters.Add(":CODIGO", OleDbType.Numeric, 4, "CODIGO");
+            comDeletePessoa.Connection = new OleDbConnection(ConnStr);
+            DAcadastropessoa.DeleteCommand = comDeletePessoa;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -91,5 +110,55 @@ namespace Aula_1
             tbEmail.Clear();
             tbTelefone.Clear();
         }
+
+        private void tbEditar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(tbCodigo.Text);
+            DataRow reg = DScadastropessoa.Tables[0].Rows.Find(id);
+            reg["NOME"] = tbNome.Text;
+            reg["EMAIL"] = tbEmail.Text;
+            reg["TELEFONE"] = tbTelefone.Text;
+            DAcadastropessoa.Update(DScadastropessoa);
+
+            MessageBox.Show("Cadastro Editado");
+            Clear();
+        }
+
+        private void tbExcluir_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(tbCodigo.Text);
+            DataRow reg = DScadastropessoa.Tables[0].Rows.Find(id);
+            reg.Delete();
+            DAcadastropessoa.Update(DScadastropessoa);
+
+            MessageBox.Show("Cadastro Excluído");
+            Clear();
+        }
+
+        private void tbBuscar_Click(object sender, EventArgs e)
+        {
+            string sqlQ = "select * from CADASTROPESSOA where codigo = '" + tbCodigo.Text + "'";
+            DAcadastropessoa.SelectCommand = new OleDbCommand(sqlQ);
+            DAcadastropessoa.SelectCommand.Connection = new OleDbConnection(ConnStr);
+            DScadastropessoa.Clear();
+            DAcadastropessoa.Fill(DScadastropessoa);
+            if (DScadastropessoa.Tables[0].Rows.Count > 0)
+            {
+                DataRow reg = DScadastropessoa.Tables[0].Rows[0];
+                tbCodigo.Text = reg["CODIGO"].ToString();
+                tbNome.Text = reg["NOME"].ToString();
+                tbEmail. Text = reg["EMAIL"].ToString();
+                tbTelefone.Text = reg["TELEFONE"].ToString();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
+
+    
+    
+

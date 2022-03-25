@@ -40,11 +40,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbEditar = new System.Windows.Forms.Button();
+            this.tbExcluir = new System.Windows.Forms.Button();
+            this.tbBuscar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbBuscar);
+            this.groupBox1.Controls.Add(this.tbExcluir);
+            this.groupBox1.Controls.Add(this.tbEditar);
             this.groupBox1.Controls.Add(this.btSair);
             this.groupBox1.Controls.Add(this.btLimpar);
             this.groupBox1.Controls.Add(this.btSalvar);
@@ -58,14 +66,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(616, 357);
+            this.groupBox1.Size = new System.Drawing.Size(616, 284);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(535, 290);
+            this.btSair.Location = new System.Drawing.Point(535, 242);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(75, 23);
             this.btSair.TabIndex = 7;
@@ -75,7 +83,7 @@
             // 
             // btLimpar
             // 
-            this.btLimpar.Location = new System.Drawing.Point(454, 290);
+            this.btLimpar.Location = new System.Drawing.Point(454, 242);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(75, 23);
             this.btLimpar.TabIndex = 6;
@@ -85,7 +93,7 @@
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(26, 290);
+            this.btSalvar.Location = new System.Drawing.Point(17, 242);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 5;
@@ -161,16 +169,66 @@
             this.label1.Text = "Codigo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // tbEditar
+            // 
+            this.tbEditar.Location = new System.Drawing.Point(98, 242);
+            this.tbEditar.Name = "tbEditar";
+            this.tbEditar.Size = new System.Drawing.Size(75, 23);
+            this.tbEditar.TabIndex = 8;
+            this.tbEditar.Text = "Editar";
+            this.tbEditar.UseVisualStyleBackColor = true;
+            this.tbEditar.Click += new System.EventHandler(this.tbEditar_Click);
+            // 
+            // tbExcluir
+            // 
+            this.tbExcluir.BackColor = System.Drawing.SystemColors.MenuText;
+            this.tbExcluir.BackgroundImage = global::Aula_1.Properties.Resources.png_transparent_maine_computer_icons_close_icon_thumbnail;
+            this.tbExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tbExcluir.Cursor = System.Windows.Forms.Cursors.No;
+            this.tbExcluir.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.tbExcluir.ImageKey = "(none)";
+            this.tbExcluir.Location = new System.Drawing.Point(179, 242);
+            this.tbExcluir.Name = "tbExcluir";
+            this.tbExcluir.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbExcluir.Size = new System.Drawing.Size(75, 26);
+            this.tbExcluir.TabIndex = 9;
+            this.tbExcluir.Text = "Excluir";
+            this.tbExcluir.UseVisualStyleBackColor = false;
+            this.tbExcluir.Click += new System.EventHandler(this.tbExcluir_Click);
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Location = new System.Drawing.Point(260, 242);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(75, 23);
+            this.tbBuscar.TabIndex = 10;
+            this.tbBuscar.Text = "Buscar";
+            this.tbBuscar.UseVisualStyleBackColor = true;
+            this.tbBuscar.Click += new System.EventHandler(this.tbBuscar_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AccessibleName = "Pessoa";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 311);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(616, 141);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Form1
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 378);
+            this.ClientSize = new System.Drawing.Size(646, 457);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Cadastro Pessoa";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,9 +244,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbCodigo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.Button tbEditar;
+        private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Button tbExcluir;
+        private System.Windows.Forms.Button tbBuscar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
