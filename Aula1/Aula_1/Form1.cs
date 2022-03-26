@@ -11,9 +11,8 @@ namespace Aula_1
         string ConnStr = "Provider=msdaora; Data Source=LOCAL; User Id=local; Password=local;";
         OleDbDataAdapter DAcadastropessoa;
         DataSet DScadastropessoa;
-        OleDbCommand comInsertPessoa;
-        OleDbCommand comUpdatePessoa;
-        OleDbCommand comDeletePessoa;
+        OleDbCommand comInsertPessoa, comUpdatePessoa, comDeletePessoa;
+        
 
         public Form1()
         {
@@ -24,6 +23,18 @@ namespace Aula_1
             DScadastropessoa = new DataSet("CADASTROPESSOA");
             DAcadastropessoa.FillSchema(DScadastropessoa, SchemaType.Source);
             DAcadastropessoa.Fill(DScadastropessoa);
+            
+            
+
+            // Preencher DataGridView
+            dgPessoa.DataSource = DScadastropessoa.Tables[0];
+            //dgPessoa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            // Nome Colunas DataGridView
+            dgPessoa.Columns["codigo"].HeaderText = "Código";
+            dgPessoa.Columns["nome"].HeaderText = "Nome";
+            dgPessoa.Columns["email"].HeaderText = "E-mail";
+            dgPessoa.Columns["telefone"].HeaderText = "Telefone";
 
             // Insert Pessoa 
             string sqlInsert = "insert into CADASTROPESSOA(codigo,nome,email,telefone) values(?,?,?,?)";
@@ -53,55 +64,39 @@ namespace Aula_1
             DAcadastropessoa.DeleteCommand = comDeletePessoa;
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btSair_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Deseja realmente sair?" + "\n" + "Todas as informações não salvas serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Close();
         }
 
         private void btLimpar_Click(object sender, EventArgs e)
         {
-            Clear();
+            if (MessageBox.Show("Deseja realmente LIMPAR ?" + "\n" + "Todas as informações não salvas serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Clear();
 
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            DataRow linha = DScadastropessoa.Tables[0].NewRow();
-            linha["codigo"] = tbCodigo.Text;
-            linha["nome"] = tbNome.Text;
-            linha["email"] = tbEmail.Text;
-            linha["telefone"] = tbTelefone.Text;
+            try
+            {
+                DataRow linha = DScadastropessoa.Tables[0].NewRow();
+                linha["codigo"] = tbCodigo.Text;
+                linha["nome"] = tbNome.Text;
+                linha["email"] = tbEmail.Text;
+                linha["telefone"] = tbTelefone.Text;
 
-            DScadastropessoa.Tables[0].Rows.Add(linha);
-            DAcadastropessoa.Update(DScadastropessoa);
+                DScadastropessoa.Tables[0].Rows.Add(linha);
+                DAcadastropessoa.Update(DScadastropessoa);
 
-            MessageBox.Show("Cadastro Realizado");
-            Clear();
+                MessageBox.Show("Cadastro Realizado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Necessário preencher todos os campos!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void Clear()
         {
@@ -131,8 +126,9 @@ namespace Aula_1
             reg.Delete();
             DAcadastropessoa.Update(DScadastropessoa);
 
-            MessageBox.Show("Cadastro Excluído");
-            Clear();
+            if (MessageBox.Show("Deseja realmente EXCLUIR ?" + "\n" + "Todas as informações serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Clear();
+
         }
 
         private void tbBuscar_Click(object sender, EventArgs e)
@@ -154,7 +150,18 @@ namespace Aula_1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int linha = dgPessoa.CurrentRow.Index;
 
+            tbCodigo.Text = dgPessoa["codigo", linha].Value.ToString();
+            tbNome.Text = dgPessoa["nome", linha].Value.ToString();
+            tbEmail.Text = dgPessoa["email", linha].Value.ToString();
+            tbTelefone.Text = dgPessoa["telefone", linha].Value.ToString();
+        }
+
+        private void btSair_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente SAIR ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Close();
         }
     }
 }
