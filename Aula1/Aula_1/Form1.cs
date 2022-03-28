@@ -18,7 +18,7 @@ namespace Aula_1
         {
             InitializeComponent();
             //Pega as informações da tabela Pessoa e da um FIll (preenchimento)
-            string sqlPessoa = "select * from CADASTROPESSOA";
+            string sqlPessoa = "select * from CADASTROPESSOA order by codigo";
             DAcadastropessoa = new OleDbDataAdapter(sqlPessoa, ConnStr);
             DScadastropessoa = new DataSet("CADASTROPESSOA");
             DAcadastropessoa.FillSchema(DScadastropessoa, SchemaType.Source);
@@ -72,7 +72,7 @@ namespace Aula_1
 
         private void btLimpar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente LIMPAR ?" + "\n" + "Todas as informações não salvas serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente limpar ?" + "\n" + "Todas as informações não salvas serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Clear();
 
         }
@@ -126,7 +126,7 @@ namespace Aula_1
             reg.Delete();
             DAcadastropessoa.Update(DScadastropessoa);
 
-            if (MessageBox.Show("Deseja realmente EXCLUIR ?" + "\n" + "Todas as informações serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente excluir ?" + "\n" + "Todas as informações serão perdidas!", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Clear();
 
         }
@@ -136,7 +136,7 @@ namespace Aula_1
             string sqlQ = "select * from CADASTROPESSOA where codigo = '" + tbCodigo.Text + "'";
             DAcadastropessoa.SelectCommand = new OleDbCommand(sqlQ);
             DAcadastropessoa.SelectCommand.Connection = new OleDbConnection(ConnStr);
-            DScadastropessoa.Clear();
+            //DScadastropessoa.Clear();
             DAcadastropessoa.Fill(DScadastropessoa);
             if (DScadastropessoa.Tables[0].Rows.Count > 0)
             {
@@ -148,7 +148,7 @@ namespace Aula_1
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int linha = dgPessoa.CurrentRow.Index;
 
@@ -158,9 +158,11 @@ namespace Aula_1
             tbTelefone.Text = dgPessoa["telefone", linha].Value.ToString();
         }
 
+     
+
         private void btSair_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente SAIR ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente sair ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Close();
         }
     }
