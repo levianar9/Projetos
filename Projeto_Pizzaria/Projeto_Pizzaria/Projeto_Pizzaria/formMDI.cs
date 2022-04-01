@@ -15,7 +15,8 @@ namespace Projeto_Pizzaria
 
         private void tsSair_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Deseja realmente sair ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Close();
         }
 
         private void tsCliente_Click(object sender, EventArgs e)
