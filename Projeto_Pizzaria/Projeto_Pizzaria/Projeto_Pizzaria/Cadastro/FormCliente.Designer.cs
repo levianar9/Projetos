@@ -32,8 +32,9 @@ namespace Projeto_Pizzaria.Cadastro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.btEdita = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
-            this.tbTelefone = new System.Windows.Forms.TextBox();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btLimpar = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@ namespace Projeto_Pizzaria.Cadastro
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCodigo = new System.Windows.Forms.TextBox();
-            this.btEdita = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.Cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCliente)).BeginInit();
@@ -57,9 +57,9 @@ namespace Projeto_Pizzaria.Cadastro
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbTelefone);
             this.groupBox1.Controls.Add(this.btEdita);
             this.groupBox1.Controls.Add(this.btBuscar);
-            this.groupBox1.Controls.Add(this.tbTelefone);
             this.groupBox1.Controls.Add(this.btExcluir);
             this.groupBox1.Controls.Add(this.btSalvar);
             this.groupBox1.Controls.Add(this.btLimpar);
@@ -79,6 +79,27 @@ namespace Projeto_Pizzaria.Cadastro
             this.groupBox1.Size = new System.Drawing.Size(776, 426);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cliente";
+            // 
+            // tbTelefone
+            // 
+            this.tbTelefone.Location = new System.Drawing.Point(400, 143);
+            this.tbTelefone.Mask = "(00)00000-0000";
+            this.tbTelefone.Name = "tbTelefone";
+            this.tbTelefone.Size = new System.Drawing.Size(100, 20);
+            this.tbTelefone.TabIndex = 9;
+            // 
+            // btEdita
+            // 
+            this.btEdita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEdita.BackgroundImage")));
+            this.btEdita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btEdita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEdita.Location = new System.Drawing.Point(248, 187);
+            this.btEdita.Name = "btEdita";
+            this.btEdita.Size = new System.Drawing.Size(75, 65);
+            this.btEdita.TabIndex = 12;
+            this.btEdita.UseVisualStyleBackColor = true;
+            this.btEdita.Click += new System.EventHandler(this.btEdita_Click);
             // 
             // btBuscar
             // 
@@ -88,16 +109,9 @@ namespace Projeto_Pizzaria.Cadastro
             this.btBuscar.Location = new System.Drawing.Point(356, 187);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(75, 65);
-            this.btBuscar.TabIndex = 15;
+            this.btBuscar.TabIndex = 13;
             this.btBuscar.UseVisualStyleBackColor = true;
             this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
-            // 
-            // tbTelefone
-            // 
-            this.tbTelefone.Location = new System.Drawing.Point(400, 144);
-            this.tbTelefone.Name = "tbTelefone";
-            this.tbTelefone.Size = new System.Drawing.Size(166, 20);
-            this.tbTelefone.TabIndex = 9;
             // 
             // btExcluir
             // 
@@ -131,7 +145,7 @@ namespace Projeto_Pizzaria.Cadastro
             this.btLimpar.Location = new System.Drawing.Point(545, 187);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(75, 65);
-            this.btLimpar.TabIndex = 12;
+            this.btLimpar.TabIndex = 14;
             this.btLimpar.UseVisualStyleBackColor = true;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
@@ -143,7 +157,7 @@ namespace Projeto_Pizzaria.Cadastro
             this.btSair.Location = new System.Drawing.Point(656, 187);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(75, 65);
-            this.btSair.TabIndex = 13;
+            this.btSair.TabIndex = 15;
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
@@ -153,7 +167,7 @@ namespace Projeto_Pizzaria.Cadastro
             this.Cliente.Location = new System.Drawing.Point(6, 258);
             this.Cliente.Name = "Cliente";
             this.Cliente.Size = new System.Drawing.Size(764, 162);
-            this.Cliente.TabIndex = 14;
+            this.Cliente.TabIndex = 16;
             this.Cliente.TabStop = false;
             this.Cliente.Enter += new System.EventHandler(this.dgCliente_Enter);
             // 
@@ -242,18 +256,6 @@ namespace Projeto_Pizzaria.Cadastro
             this.tbCodigo.Size = new System.Drawing.Size(51, 20);
             this.tbCodigo.TabIndex = 1;
             // 
-            // btEdita
-            // 
-            this.btEdita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEdita.BackgroundImage")));
-            this.btEdita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btEdita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEdita.Location = new System.Drawing.Point(248, 187);
-            this.btEdita.Name = "btEdita";
-            this.btEdita.Size = new System.Drawing.Size(75, 65);
-            this.btEdita.TabIndex = 16;
-            this.btEdita.UseVisualStyleBackColor = true;
-            this.btEdita.Click += new System.EventHandler(this.btEdita_Click);
-            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,8 +296,8 @@ namespace Projeto_Pizzaria.Cadastro
         private System.Windows.Forms.GroupBox Cliente;
         private System.Windows.Forms.DataGridView dgCliente;
         private System.Windows.Forms.Button btExcluir;
-        private System.Windows.Forms.TextBox tbTelefone;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.Button btEdita;
+        private System.Windows.Forms.MaskedTextBox tbTelefone;
     }
 }

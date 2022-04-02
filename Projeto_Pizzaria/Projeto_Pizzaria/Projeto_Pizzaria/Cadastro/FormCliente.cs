@@ -33,8 +33,8 @@ namespace Projeto_Pizzaria.Cadastro
             // Nome Colunas DataGridView
             dgCliente.Columns["codigo"].HeaderText = "Código";
             dgCliente.Columns["nome"].HeaderText = "Nome";
-            dgCliente.Columns["endereco"].HeaderText = "E-endereco";
-            dgCliente.Columns["bairro"].HeaderText = "bairro";
+            dgCliente.Columns["endereco"].HeaderText = "Endereco";
+            dgCliente.Columns["bairro"].HeaderText = "Bairro";
             dgCliente.Columns["telefone"].HeaderText = "Telefone";
 
 
@@ -50,7 +50,7 @@ namespace Projeto_Pizzaria.Cadastro
             DAcadastrocliente.InsertCommand = comInsertPessoa;
 
             //Update 
-            string sqlUp = "Update CADASTRO_CLIENTE set codigo = ?, nome = ?, endereco = ? , bairro = ? , telefone = ?"; 
+            string sqlUp = "Update CADASTRO_CLIENTE set codigo = ?, nome = ?, endereco = ? , bairro = ? where telefone = ?"; 
             comUpdatePessoa = new OleDbCommand(sqlUp);
             comUpdatePessoa.Parameters.Add("codigo", OleDbType.Numeric, 9, "codigo");
             comUpdatePessoa.Parameters.Add("nome", OleDbType.VarChar, 60, "nome");

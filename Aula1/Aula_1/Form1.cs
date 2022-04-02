@@ -136,7 +136,7 @@ namespace Aula_1
             string sqlQ = "select * from CADASTROPESSOA where codigo = '" + tbCodigo.Text + "'";
             DAcadastropessoa.SelectCommand = new OleDbCommand(sqlQ);
             DAcadastropessoa.SelectCommand.Connection = new OleDbConnection(ConnStr);
-            //DScadastropessoa.Clear();
+            DScadastropessoa.Clear();
             DAcadastropessoa.Fill(DScadastropessoa);
             if (DScadastropessoa.Tables[0].Rows.Count > 0)
             {
