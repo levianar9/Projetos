@@ -1,0 +1,11 @@
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\bin\Debug\ColecaoCds.exe.config
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\bin\Debug\ColecaoCds.exe
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\bin\Debug\ColecaoCds.pdb
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.csproj.AssemblyReference.cache
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.csproj.SuggestedBindingRedirects.cache
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.Form1.resources
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.Properties.Resources.resources
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.csproj.GenerateResource.cache
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.csproj.CoreCompileInputs.cache
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.exe
+C:\GitHub\Projetos\ColecaoCds\ColecaoCds\obj\Debug\ColecaoCds.pdb
