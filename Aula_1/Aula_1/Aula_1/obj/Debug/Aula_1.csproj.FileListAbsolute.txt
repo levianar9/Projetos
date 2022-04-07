@@ -1,0 +1,11 @@
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\bin\Debug\Aula_1.exe.config
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\bin\Debug\Aula_1.exe
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\bin\Debug\Aula_1.pdb
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.csproj.AssemblyReference.cache
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.csproj.SuggestedBindingRedirects.cache
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.Form1.resources
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.Properties.Resources.resources
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.csproj.GenerateResource.cache
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.csproj.CoreCompileInputs.cache
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.exe
+C:\GitHub\Projetos\Aula_1\Aula_1\Aula_1\obj\Debug\Aula_1.pdb
