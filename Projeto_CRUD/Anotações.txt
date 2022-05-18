@@ -1,0 +1,26 @@
+CRUD = Create, Read, Update, Delete
+
+1 - Criar usuário no Banco de Dados.
+Usuário: curso
+Senha: 123456
+
+
+2 - Criar estrutura da tabela de Cadastro de Pessoa.
+CREATE TABLE CAD_PESSOA
+(
+ SEQPESSOA INTEGER,
+ NOME      VARCHAR2(100),
+ CPF       NUMBER(11),
+ SEXO      VARCHAR2(1),
+ EMAIL     VARCHAR2(100)
+);
+ALTER TABLE CAD_PESSOA ADD CONSTRAINT CAD_PESSOAPK PRIMARY KEY (SEQPESSOA);
+
+
+3 - Criar aplicação em c# conforme estrutura acima.
+Visual Studio > New Project > Windows Form App (.NET Framework) C#
+CheckList componentes
+> TabIndex
+> MaxLength
+> Name
+
